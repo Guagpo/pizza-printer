@@ -4,8 +4,8 @@ const app = express();
 app.use(express.json());
  
 // ↓ SKIFT DISSE TO LINJER UD ↓
-const PRINTNODE_API_KEY = 'bna3Kj8fcF87arWyFnZwLRuzOQgbrLU-jCo_9j-ZJ2M';
-const PRINTER_ID = 75210272;
+const PRINTNODE_API_KEY = process.env.PRINTNODE_API_KEY;
+const PRINTER_ID = parseInt(process.env.PRINTER_ID);
  
 function formatOrder(order) {
   const tid = new Date().toLocaleString('da-DK');
