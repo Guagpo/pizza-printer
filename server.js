@@ -9,7 +9,7 @@ app.post('/print-order', async (req, res) => {
     console.log('================================');
     console.log('       NY TELEFONORDRE          ');
     console.log('================================');
-    console.log(`Tidspunkt : ${new Date().toLocaleString('da-DK')}`);
+    console.log(`Tidspunkt : ${new Date().toLocaleString('da-DK', { timeZone: 'Europe/Copenhagen' })}`);
     console.log(`Navn      : ${order.navn}`);
     console.log(`Telefon   : ${order.telefon}`);
     console.log('--------------------------------');
