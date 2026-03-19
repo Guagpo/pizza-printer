@@ -4,13 +4,7 @@ app.use(express.json());
 
 app.post('/print-order', async (req, res) => {
   try {
-    const order = req.body;
-    console.log('NY ORDRE:', JSON.stringify({
-      navn: order.navn,
-      telefon: order.telefon,
-      ordre: order.ordre,
-      type: order.type
-    }));
+    console.log('RAW:', JSON.stringify(req.body));
     res.json({ success: true });
   } catch (err) {
     console.error('Fejl:', err.message);
