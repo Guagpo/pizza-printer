@@ -4,8 +4,13 @@ app.use(express.json());
 
 app.post('/print-order', async (req, res) => {
   try {
-    console.log('RAW DATA FRA RETELL:');
-    console.log(JSON.stringify(req.body, null, 2));
+    const order = req.body;
+    console.log('NY ORDRE:', JSON.stringify({
+      navn: order.navn,
+      telefon: order.telefon,
+      ordre: order.ordre,
+      type: order.type
+    }));
     res.json({ success: true });
   } catch (err) {
     console.error('Fejl:', err.message);
