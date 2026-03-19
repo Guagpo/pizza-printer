@@ -4,22 +4,8 @@ app.use(express.json());
 
 app.post('/print-order', async (req, res) => {
   try {
-    const order = req.body;
-    
-    console.log('================================');
-    console.log('       NY TELEFONORDRE          ');
-    console.log('================================');
-    console.log(`Tidspunkt : ${new Date().toLocaleString('da-DK', { timeZone: 'Europe/Copenhagen' })}`);
-    console.log(`Navn      : ${order.navn}`);
-    console.log(`Telefon   : ${order.telefon}`);
-    console.log('--------------------------------');
-    console.log('ORDRE:');
-    console.log(`${order.ordre}`);
-    console.log('--------------------------------');
-    console.log(`Type      : ${order.type}`);
-    console.log(`Adresse   : ${order.adresse || 'Afhentning'}`);
-    console.log('================================');
-
+    console.log('RAW DATA FRA RETELL:');
+    console.log(JSON.stringify(req.body, null, 2));
     res.json({ success: true });
   } catch (err) {
     console.error('Fejl:', err.message);
